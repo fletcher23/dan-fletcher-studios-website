@@ -1,0 +1,237 @@
+---
+import Layout from '@/layouts/Layout.astro';
+
+/**
+ * To add real photos, replace the placeholder items with:
+ *   { src: '/images/portfolio/your-photo.jpg', alt: 'Description', category: 'headshots' }
+ *
+ * Drop images in public/images/portfolio/
+ */
+
+type Category = 'headshots' | 'brand' | 'lifestyle' | 'video' | 'design';
+
+interface PortfolioItem {
+  src?: string;
+  alt: string;
+  category: Category;
+  tall?: boolean;
+}
+
+const items: PortfolioItem[] = [
+  { alt: 'Executive headshot', category: 'headshots', tall: true },
+  { alt: 'Brand session , coffee shop', category: 'brand' },
+  { alt: 'Lifestyle , entrepreneur', category: 'lifestyle' },
+  { alt: 'Corporate headshot', category: 'headshots' },
+  { alt: 'Brand session , product flat lay', category: 'brand', tall: true },
+  { alt: 'Team headshots', category: 'headshots' },
+  { alt: 'Lifestyle , remote work', category: 'lifestyle' },
+  { alt: 'Logo design , brand identity', category: 'design' },
+  { alt: 'Executive portrait', category: 'headshots', tall: true },
+  { alt: 'Brand session , office', category: 'brand' },
+  { alt: 'Social media graphics', category: 'design' },
+  { alt: 'Lifestyle, outdoor', category: 'lifestyle' },
+  { alt: 'Brand video shoot', category: 'video', tall: true },
+];
+
+const categories: { id: Category | 'all'; label: string }[] = [
+  { id: 'all',       label: 'All Work'    },
+  { id: 'headshots', label: 'Headshots'   },
+  { id: 'brand',     label: 'Brand'       },
+  { id: 'lifestyle', label: 'Lifestyle'   },
+  { id: 'video',     label: 'Video'       },
+  { id: 'design',    label: 'Design'      },
+];
+---
+
+<Layout
+  title="Portfolio"
+  description="Photography, video, and design work from Dan Fletcher Studios: headshots, brand sessions, lifestyle, video, and graphic design."
+>
+
+  <section class="section page-header">
+    <div class="container">
+      <span class="eyebrow">The Work</span>
+      <h1>Portfolio</h1>
+      <div class="divider"></div>
+      <p class="page-header__sub">
+        A growing collection of photography, video, and design work. More being added regularly. <a href="/contact">Get in touch</a> to discuss your project.
+      </p>
+    </div>
+  </section>
+
+  <!-- Filter tabs -->
+  <div class="container filter-bar" role="tablist" aria-label="Filter portfolio by category">
+    {categories.map(({ id, label }) => (
+      <button
+        class:list={['filter-btn', { 'filter-btn--active': id === 'all' }]}
+        data-filter={id}
+        role="tab"
+        aria-selected={id === 'all' ? 'true' : 'false'}
+      >
+        {label}
+      </button>
+    ))}
+  </div>
+
+  <!-- Masonry grid -->
+  <div class="container portfolio-grid" id="portfolio-grid">
+    {items.map(({ src, alt, category, tall }) => (
+      <div class:list={['portfolio-item', { 'portfolio-item--tall': tall }]} data-category={category}>
+        {src
+          ? <img src={src} alt={alt} loading="lazy" />
+          : (
+            <div class="portfolio-item__placeholder">
+              <span>{alt}</span>
+            </div>
+          )
+        }
+        <div class="portfolio-item__overlay">
+          <span class="portfolio-item__cat">{category}</span>
+          <p>{alt}</p>
+        </div>
+      </div>
+    ))}
+  </div>
+
+  <div class="section container" style="text-align:center;">
+    <p style="color:var(--gray-lt); margin-bottom:1.5rem;">
+      Like what you see? Let's create something for your brand.
+    </p>
+    <a href="/contact" class="btn btn-primary">Start a Project</a>
+  </div>
+
+</Layout>
+
+<script>
+  const filterBtns = document.querySelectorAll<HTMLButtonElement>('.filter-btn');
+  const items      = document.querySelectorAll<HTMLElement>('.portfolio-item');
+
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const filter = btn.dataset.filter!;
+
+      filterBtns.forEach(b => {
+        b.classList.remove('filter-btn--active');
+        b.setAttribute('aria-selected', 'false');
+      });
+      btn.classList.add('filter-btn--active');
+      btn.setAttribute('aria-selected', 'true');
+
+      items.forEach(item => {
+        const show = filter === 'all' || item.dataset.category === filter;
+        item.style.display = show ? '' : 'none';
+      });
+    });
+  });
+</script>
+
+<style>
+  .page-header h1 { font-size: clamp(2.5rem, 5vw, 4rem); }
+  .page-header__sub {
+    color: var(--gray-lt);
+    max-width: 540px;
+    font-size: 1.0625rem;
+    margin-top: 1rem;
+  }
+  .page-header__sub a { color: var(--red); border-bottom: 1px solid currentColor; }
+
+  /* Filter bar */
+  .filter-bar {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    margin-bottom: 2.5rem;
+  }
+
+  .filter-btn {
+    background: transparent;
+    border: 1px solid var(--border);
+    color: var(--gray-lt);
+    font-size: 0.8125rem;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    padding: 0.5rem 1.25rem;
+    cursor: pointer;
+    transition: all 0.15s;
+  }
+  .filter-btn:hover { border-color: var(--white); color: var(--white); }
+  .filter-btn--active {
+    background: var(--red);
+    border-color: var(--red);
+    color: var(--white);
+  }
+
+  /* Portfolio grid */
+  .portfolio-grid {
+    columns: 3 280px;
+    column-gap: 0.75rem;
+  }
+
+  .portfolio-item {
+    break-inside: avoid;
+    margin-bottom: 0.75rem;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+  }
+
+  .portfolio-item img {
+    width: 100%;
+    display: block;
+    transition: transform 0.4s ease;
+  }
+  .portfolio-item:hover img { transform: scale(1.04); }
+
+  .portfolio-item--tall .portfolio-item__placeholder { aspect-ratio: 3/4; }
+
+  .portfolio-item__placeholder {
+    aspect-ratio: 4/3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: repeating-linear-gradient(
+      -45deg,
+      #2a2a2a,
+      #2a2a2a 10px,
+      #272727 10px,
+      #272727 20px
+    );
+    font-size: 0.75rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--gray);
+    text-align: center;
+    padding: 1rem;
+  }
+
+  /* Hover overlay */
+  .portfolio-item__overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(35, 35, 35, 0.85);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    opacity: 0;
+    transition: opacity 0.25s;
+    padding: 1rem;
+    text-align: center;
+  }
+  .portfolio-item:hover .portfolio-item__overlay { opacity: 1; }
+
+  .portfolio-item__cat {
+    font-size: 0.65rem;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--red);
+  }
+
+  .portfolio-item__overlay p {
+    font-size: 0.875rem;
+    color: var(--white);
+  }
+</style>

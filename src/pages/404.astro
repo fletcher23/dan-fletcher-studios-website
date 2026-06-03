@@ -1,0 +1,40 @@
+---
+import Layout from '@/layouts/Layout.astro';
+---
+
+<Layout title="404: Page Not Found">
+  <section class="section notfound">
+    <div class="container notfound__inner">
+      <span class="notfound__num" aria-hidden="true">404</span>
+      <h1>Page not found.</h1>
+      <div class="divider"></div>
+      <p>That page doesn't exist. The URL may have changed, or you followed an old link.</p>
+      <div style="display:flex; gap:1rem; flex-wrap:wrap; margin-top:2rem;">
+        <a href="/"         class="btn btn-primary">Go Home</a>
+        <a href="/portfolio" class="btn btn-outline">View Portfolio</a>
+        <a href="/contact"  class="btn btn-outline">Get in Touch</a>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .notfound {
+    min-height: 70vh;
+    display: flex;
+    align-items: center;
+  }
+  .notfound__inner { max-width: 600px; }
+  .notfound__num {
+    display: block;
+    font-family: var(--font-serif);
+    font-size: clamp(5rem, 15vw, 10rem);
+    font-weight: 700;
+    color: var(--red);
+    opacity: 0.15;
+    line-height: 1;
+    margin-bottom: -1rem;
+  }
+  .notfound__inner h1 { font-size: clamp(2rem, 4vw, 3rem); }
+  .notfound__inner p  { color: var(--gray-lt); font-size: 1.0625rem; margin-top: 1rem; }
+</style>

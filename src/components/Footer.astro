@@ -1,0 +1,100 @@
+---
+const year = new Date().getFullYear();
+---
+
+<footer class="footer">
+  <div class="container footer__inner">
+    <div class="footer__brand">
+      <a href="/" aria-label="Dan Fletcher Studios, Home">
+        <img src="/logo-white.png" alt="Dan Fletcher Studios" class="footer__logo-img" width="200" height="44" />
+      </a>
+      <p class="footer__tagline">Photography · Videography · Design</p>
+      <p class="footer__location">Wheaton · Naperville · Chicago Suburbs</p>
+    </div>
+
+    <nav class="footer__nav" aria-label="Footer navigation">
+      <a href="/">Home</a>
+      <a href="/portfolio">Portfolio</a>
+      <a href="/services">Services</a>
+      <a href="/about">About</a>
+      <a href="/contact">Contact</a>
+    </nav>
+
+    <div class="footer__cta">
+      <p>Ready to work together?</p>
+      <a href="/contact" class="btn btn-outline" style="margin-top:1rem;">Get in Touch</a>
+    </div>
+  </div>
+
+  <div class="footer__bottom container">
+    <span>© {year} Dan Fletcher Studios. All rights reserved.</span>
+    <span>danfletcherstudios.com</span>
+  </div>
+</footer>
+
+<style>
+  .footer {
+    border-top: 1px solid var(--border);
+    margin-top: var(--section-gap);
+  }
+
+  .footer__inner {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr;
+    gap: 3rem;
+    padding-block: 4rem;
+  }
+
+  .footer__logo-img {
+    height: 40px;
+    width: auto;
+    display: block;
+  }
+
+  .footer__tagline {
+    margin-top: 0.5rem;
+    font-size: 0.8rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--gray);
+  }
+
+  .footer__location {
+    margin-top: 0.35rem;
+    font-size: 0.8125rem;
+    color: var(--gray);
+  }
+
+  .footer__nav {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    padding-top: 0.25rem;
+  }
+  .footer__nav a {
+    font-size: 0.875rem;
+    color: var(--gray-lt);
+    transition: color 0.15s;
+  }
+  .footer__nav a:hover { color: var(--white); }
+
+  .footer__cta p {
+    font-size: 0.875rem;
+    color: var(--gray-lt);
+  }
+
+  .footer__bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-block: 1.25rem;
+    border-top: 1px solid var(--border);
+    font-size: 0.75rem;
+    color: var(--gray);
+  }
+
+  @media (max-width: 768px) {
+    .footer__inner { grid-template-columns: 1fr; gap: 2rem; padding-block: 2.5rem; }
+    .footer__bottom { flex-direction: column; gap: 0.5rem; text-align: center; }
+  }
+</style>
