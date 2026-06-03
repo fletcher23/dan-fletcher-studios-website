@@ -1,0 +1,244 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact | Dan Fletcher Studios</title>
+  <meta name="description" content="Book a photography, design, or social content project with Dan Fletcher Studios. Based in Wheaton, IL. Most inquiries answered within one business day." />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Contact | Dan Fletcher Studios" />
+  <meta property="og:description" content="Let's make something. Start a project with Dan Fletcher Studios." />
+  <meta property="og:image" content="assets/og-default.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <link rel="icon" type="image/png" href="assets/favicon.png" />
+  <link rel="apple-touch-icon" href="assets/favicon.png" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&family=Geist+Mono:wght@100..900&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body data-page="contact">
+
+  <div id="site-nav"></div>
+
+  <main class="page-fade" data-screen-label="Contact">
+
+    <!-- Success state (shown after submit or ?sent=1) -->
+    <div id="form-success" hidden>
+      <section class="container contact-success">
+        <div class="contact-success__icon">✓</div>
+        <span class="mono" style="color:var(--red); margin-top:28px; display:block;">/ Inquiry received</span>
+        <h2>Got it. I'll be <span class="display-italic">in touch soon.</span></h2>
+        <p>Expect a reply within one business day.</p>
+        <a href="index.html" class="btn outline" style="margin-top:32px;">← Back to home</a>
+      </section>
+    </div>
+
+    <!-- Header -->
+    <section class="container contact-head">
+      <div class="contact-head__inner">
+        <div>
+          <span class="mono" style="color:var(--red);">/ Contact</span>
+          <h1><span class="display-italic">Let's</span><br />make<br />something.</h1>
+        </div>
+        <div class="resp-card">
+          <span class="mono" style="color:rgba(255,255,255,0.5);">Response time</span>
+          <div class="resp-card__num">&lt; 24h</div>
+          <p>Most inquiries get a response within one business day. Priority sessions can be arranged on short notice — just ask.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Form -->
+    <section class="container contact-body">
+      <div class="contact-grid">
+
+        <!--
+          ┌─────────────────────────────────────────────────────────────────┐
+          │ FORM SETUP — submissions email dan@danfletcherstudios.com         │
+          │                                                                   │
+          │ 1. Sign up at formspree.io using dan@danfletcherstudios.com       │
+          │    (or add it under Form Settings → Emails → Notification email). │
+          │ 2. Create a form; copy its endpoint ID (e.g. xanbqkpz).           │
+          │ 3. Replace YOUR_FORMSPREE_ID in the action below with that ID.    │
+          │                                                                   │
+          │ Notifications go to whatever address the form is set to in the    │
+          │ Formspree dashboard — the recipient cannot be set from HTML.      │
+          │ The _cc below also copies dan@ as a backup.                       │
+          └─────────────────────────────────────────────────────────────────┘
+        -->
+        <form id="contact-form" action="https://formspree.io/f/xnjyqdkl" method="POST">
+          <span class="mono" style="color:var(--red);">/ Project brief</span>
+
+          <div class="cfield-row">
+            <div>
+              <label for="first-name">First name *</label>
+              <input class="c-input" type="text" id="first-name" name="first_name" autocomplete="given-name" required placeholder="Jane" />
+            </div>
+            <div>
+              <label for="last-name">Last name *</label>
+              <input class="c-input" type="text" id="last-name" name="last_name" autocomplete="family-name" required placeholder="Smith" />
+            </div>
+          </div>
+
+          <div class="cfield-row">
+            <div>
+              <label for="email">Email *</label>
+              <input class="c-input" type="email" id="email" name="email" autocomplete="email" required placeholder="jane@yourcompany.com" />
+            </div>
+            <div>
+              <label for="phone">Phone</label>
+              <input class="c-input" type="tel" id="phone" name="phone" autocomplete="tel" placeholder="(630) 555-0142" />
+            </div>
+          </div>
+
+          <div class="cfield">
+            <label for="service">What do you need? *</label>
+            <div class="select-wrap">
+              <select class="c-select" id="service" name="service" required>
+                <option value="" disabled selected>Pick a service…</option>
+                <optgroup label="Headshots">
+                  <option value="headshots-essential">Essential</option>
+                  <option value="headshots-professional">Professional</option>
+                  <option value="headshots-team">Team / Corporate</option>
+                </optgroup>
+                <optgroup label="Brand Photography">
+                  <option value="brand-starter">Brand Starter</option>
+                  <option value="brand-full-day">Brand Full Day</option>
+                </optgroup>
+                <optgroup label="Lifestyle">
+                  <option value="lifestyle">Lifestyle Session</option>
+                </optgroup>
+                <optgroup label="Graphic Design">
+                  <option value="design-single">Single Asset</option>
+                  <option value="design-pack">Asset Pack</option>
+                  <option value="design-campaign">Print Campaign</option>
+                </optgroup>
+                <optgroup label="Retainer">
+                  <option value="retainer-starter">Content Starter</option>
+                  <option value="retainer-pro">Content Pro</option>
+                </optgroup>
+                <option value="not-sure">Not sure yet — let's talk</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="cfield-row">
+            <div>
+              <label for="timeline">Ideal timeline</label>
+              <div class="select-wrap">
+                <select class="c-select" id="timeline" name="timeline">
+                  <option value="" disabled selected>Choose one…</option>
+                  <option value="asap">ASAP / within 2 weeks</option>
+                  <option value="this-month">This month</option>
+                  <option value="1-2-months">Next 1–2 months</option>
+                  <option value="3-plus-months">3+ months out</option>
+                  <option value="flexible">Flexible / no rush</option>
+                </select>
+              </div>
+            </div>
+            <div>
+              <label for="location">Shoot location</label>
+              <div class="select-wrap">
+                <select class="c-select" id="location" name="location">
+                  <option value="" disabled selected>Choose one…</option>
+                  <option value="wheaton-naperville">Wheaton / Naperville</option>
+                  <option value="chicago-suburbs">Greater Chicago suburbs</option>
+                  <option value="downtown-chicago">Downtown Chicago</option>
+                  <option value="travel">Other / travel needed</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <div class="cfield">
+            <label>Add-ons you're interested in</label>
+            <div class="checkbox-grid">
+              <label class="c-check"><input type="checkbox" name="addons" value="Social Reel" /><span>Social Reel</span></label>
+              <label class="c-check"><input type="checkbox" name="addons" value="Brand Video" /><span>Brand Video</span></label>
+              <label class="c-check"><input type="checkbox" name="addons" value="Additional edited images" /><span>Additional edited images</span></label>
+              <label class="c-check"><input type="checkbox" name="addons" value="Rush turnaround" /><span>Rush turnaround</span></label>
+            </div>
+          </div>
+
+          <div class="cfield">
+            <label for="message">Project details *</label>
+            <textarea class="c-textarea" id="message" name="message" rows="5" required placeholder="What are the images for? Any specific vision, location preferences, or questions?"></textarea>
+          </div>
+
+          <div class="cfield">
+            <label for="heard">How did you hear about us?</label>
+            <div class="select-wrap">
+              <select class="c-select" id="heard" name="heard_about">
+                <option value="" disabled selected>Choose one…</option>
+                <option value="instagram">Instagram</option>
+                <option value="google">Google search</option>
+                <option value="referral-friend">Referral from a friend</option>
+                <option value="referral-client">Referred by a past client</option>
+                <option value="linkedin">LinkedIn</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Anti-spam + routing -->
+          <input type="text" name="_gotcha" style="display:none;" tabindex="-1" autocomplete="off" />
+          <input type="hidden" name="_subject" value="New inquiry from Dan Fletcher Studios" />
+          <input type="hidden" name="_cc" value="dan@danfletcherstudios.com" />
+          <input type="hidden" name="_next" value="https://danfletcherstudios.com/contact.html?sent=1" />
+
+          <div id="form-error" class="form-msg" role="alert" hidden>
+            Something went wrong. Please try again, or email dan@danfletcherstudios.com directly.
+          </div>
+
+          <div class="c-submit-row">
+            <button type="submit" class="btn primary" id="submit-btn">Send brief →</button>
+            <span class="mono">No pressure, no sales pitch.</span>
+          </div>
+        </form>
+
+        <aside class="contact-aside">
+          <div class="panel">
+            <span class="mono" style="color:var(--red);">/ Direct lines</span>
+            <div class="row" style="border-bottom:1px solid var(--rule);">
+              <span class="mono">Email</span>
+              <div class="panel__email">dan@danfletcherstudios.com</div>
+            </div>
+            <div class="row">
+              <span class="mono">Studio</span>
+              <div>Wheaton, IL · Greater Chicago suburbs</div>
+            </div>
+            <div class="row">
+              <span class="mono">Hours</span>
+              <div>Weeknights &amp; weekends. Flexible.</div>
+            </div>
+            <div style="padding-top:14px;">
+              <span class="mono">Follow</span>
+              <div class="socials">
+                <a href="#" class="mono lnk">Instagram ↗</a>
+                <a href="#" class="mono lnk">LinkedIn ↗</a>
+                <a href="#" class="mono lnk">Behance ↗</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="fyi">
+            <span class="mono" style="color:var(--red);">FYI</span>
+            <p>Booking 3–4 weeks out for Spring '26. Rush sessions available — just ask.</p>
+          </div>
+        </aside>
+
+      </div>
+    </section>
+
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="site.js"></script>
+</body>
+</html>
