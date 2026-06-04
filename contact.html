@@ -97,33 +97,14 @@
           </div>
 
           <div class="cfield">
-            <label for="service">What do you need? *</label>
-            <div class="select-wrap">
-              <select class="c-select" id="service" name="service" required>
-                <option value="" disabled selected>Pick a service…</option>
-                <optgroup label="Headshots">
-                  <option value="headshots-essential">Essential</option>
-                  <option value="headshots-professional">Professional</option>
-                  <option value="headshots-team">Team / Corporate</option>
-                </optgroup>
-                <optgroup label="Brand Photography">
-                  <option value="brand-starter">Brand Starter</option>
-                  <option value="brand-full-day">Brand Full Day</option>
-                </optgroup>
-                <optgroup label="Lifestyle">
-                  <option value="lifestyle">Lifestyle Session</option>
-                </optgroup>
-                <optgroup label="Graphic Design">
-                  <option value="design-single">Single Asset</option>
-                  <option value="design-pack">Asset Pack</option>
-                  <option value="design-campaign">Print Campaign</option>
-                </optgroup>
-                <optgroup label="Retainer">
-                  <option value="retainer-starter">Content Starter</option>
-                  <option value="retainer-pro">Content Pro</option>
-                </optgroup>
-                <option value="not-sure">Not sure yet. Let's talk.</option>
-              </select>
+            <label>What type of session are you looking for? (select all that apply)</label>
+            <div class="checkbox-grid">
+              <label class="c-check"><input type="checkbox" name="session_type" value="Headshots / Portraits" /><span>Headshots / Portraits</span></label>
+              <label class="c-check"><input type="checkbox" name="session_type" value="Brand / Business Photography" /><span>Brand / Business Photography</span></label>
+              <label class="c-check"><input type="checkbox" name="session_type" value="Lifestyle Session" /><span>Lifestyle Session</span></label>
+              <label class="c-check"><input type="checkbox" name="session_type" value="Social / Brand Video Content" /><span>Social / Brand Video Content</span></label>
+              <label class="c-check"><input type="checkbox" name="session_type" value="Graphic Design" /><span>Graphic Design</span></label>
+              <label class="c-check"><input type="checkbox" name="session_type" value="Agency Retainer Packages" /><span>Agency Retainer Packages</span></label>
             </div>
           </div>
 
@@ -146,42 +127,26 @@
               <div class="select-wrap">
                 <select class="c-select" id="location" name="location">
                   <option value="" disabled selected>Choose one…</option>
-                  <option value="wheaton-naperville">Wheaton / Naperville</option>
-                  <option value="chicago-suburbs">Greater Chicago suburbs</option>
-                  <option value="downtown-chicago">Downtown Chicago</option>
-                  <option value="travel">Other / travel needed</option>
+                  <option value="wheaton-suburbs">Wheaton &amp; Surrounding Suburbs</option>
+                  <option value="chicagoland">Greater Chicagoland</option>
+                  <option value="remote">Remote (Graphic Design Only)</option>
                 </select>
               </div>
             </div>
           </div>
 
           <div class="cfield">
-            <label>Add-ons you're interested in</label>
+            <label for="message">Anything else you'd like to share? Any specific vision, ideas, or questions?</label>
+            <textarea class="c-textarea" id="message" name="message" rows="5" placeholder="Tell me more…"></textarea>
+          </div>
+
+          <div class="cfield">
+            <label>How did you hear about us?</label>
             <div class="checkbox-grid">
-              <label class="c-check"><input type="checkbox" name="addons" value="Social Reel" /><span>Social Reel</span></label>
-              <label class="c-check"><input type="checkbox" name="addons" value="Brand Video" /><span>Brand Video</span></label>
-              <label class="c-check"><input type="checkbox" name="addons" value="Additional edited images" /><span>Additional edited images</span></label>
-              <label class="c-check"><input type="checkbox" name="addons" value="Rush turnaround" /><span>Rush turnaround</span></label>
-            </div>
-          </div>
-
-          <div class="cfield">
-            <label for="message">Project details *</label>
-            <textarea class="c-textarea" id="message" name="message" rows="5" required placeholder="What are the images for? Any specific vision, location preferences, or questions?"></textarea>
-          </div>
-
-          <div class="cfield">
-            <label for="heard">How did you hear about us?</label>
-            <div class="select-wrap">
-              <select class="c-select" id="heard" name="heard_about">
-                <option value="" disabled selected>Choose one…</option>
-                <option value="instagram">Instagram</option>
-                <option value="google">Google search</option>
-                <option value="referral-friend">Referral from a friend</option>
-                <option value="referral-client">Referred by a past client</option>
-                <option value="linkedin">LinkedIn</option>
-                <option value="other">Other</option>
-              </select>
+              <label class="c-check"><input type="radio" name="heard_about" value="Instagram" /><span>Instagram</span></label>
+              <label class="c-check"><input type="radio" name="heard_about" value="Google Search" /><span>Google Search</span></label>
+              <label class="c-check"><input type="radio" name="heard_about" value="AI (ChatGPT, Claude, Gemini)" /><span>AI (ChatGPT, Claude, Gemini)</span></label>
+              <label class="c-check"><input type="radio" name="heard_about" value="Word-of-mouth" /><span>Word-of-mouth</span></label>
             </div>
           </div>
 
@@ -219,16 +184,9 @@
             <div style="padding-top:14px;">
               <span class="mono">Follow</span>
               <div class="socials">
-                <a href="#" class="mono lnk">Instagram ↗</a>
-                <a href="#" class="mono lnk">LinkedIn ↗</a>
-                <a href="#" class="mono lnk">Behance ↗</a>
+                <a href="https://instagram.com/danfletcherstudios" target="_blank" rel="noopener" class="mono lnk">@danfletcherstudios ↗</a>
               </div>
             </div>
-          </div>
-
-          <div class="fyi">
-            <span class="mono" style="color:var(--red);">FYI</span>
-            <p>Booking 3–4 weeks out for Spring '26. Rush sessions available. Just ask.</p>
           </div>
         </aside>
 

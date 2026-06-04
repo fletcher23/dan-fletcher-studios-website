@@ -527,7 +527,9 @@ h1, h2, h3, h4 {
 .c-check:hover { border-color: var(--red); }
 .c-check input { appearance: none; -webkit-appearance: none; width: 18px; height: 18px; border: 2px solid var(--rule-hard); flex-shrink: 0; cursor: pointer; position: relative; transition: background 0.15s, border-color 0.15s; }
 .c-check input:checked { background: var(--red); border-color: var(--red); }
-.c-check input:checked::after { content: '✓'; position: absolute; inset: 0; color: #fff; font-size: 12px; line-height: 14px; text-align: center; }
+.c-check input[type="checkbox"]:checked::after { content: '✓'; position: absolute; inset: 0; color: #fff; font-size: 12px; line-height: 14px; text-align: center; }
+.c-check input[type="radio"] { border-radius: 50%; }
+.c-check input[type="radio"]:checked::after { content: ''; width: 8px; height: 8px; background: #fff; border-radius: 50%; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); }
 .c-check:has(input:checked) { border-color: var(--red); background: rgba(223,35,35,0.05); }
 .c-check span { font-size: 14px; display: flex; align-items: baseline; gap: 8px; }
 .c-check em { font-family: var(--type-mono); font-style: normal; font-size: 11px; color: var(--red); }
