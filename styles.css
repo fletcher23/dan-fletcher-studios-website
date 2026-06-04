@@ -455,8 +455,7 @@ h1, h2, h3, h4 {
 .about-bio h2 { font-size: clamp(48px, 7vw, 88px); }
 .about-bio h2 .display-italic { color: var(--red); }
 .about-bio__body { margin-top: 32px; }
-.about-bio__body p { font-size: 16px; line-height: 1.7; margin-bottom: 16px; color: var(--ink-dim); }
-.about-bio__body p:first-child { color: var(--ink); }
+.about-bio__body p { font-size: 16px; line-height: 1.7; margin-bottom: 16px; color: var(--ink); }
 .about-stats { margin-top: 32px; padding-top: 24px; border-top: 1px solid var(--rule); display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
 .about-stats__num { font-family: var(--type-display); font-size: 28px; font-weight: var(--display-weight); color: var(--red); letter-spacing: var(--display-tracking); }
 .about-stats .mono { color: var(--ink-muted); }
