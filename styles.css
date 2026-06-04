@@ -259,7 +259,7 @@ h1, h2, h3, h4 {
   position: absolute;
   top: 0; right: 0;
   width: 120px; height: 100%;
-  background: linear-gradient(to right, transparent, var(--bg));
+  background: linear-gradient(to right, transparent, #000);
   pointer-events: none;
 }
 .filmstrip { display: flex; overflow-x: auto; scrollbar-width: none; height: 68vh; gap: 3px; cursor: grab; }
