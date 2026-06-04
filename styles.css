@@ -254,14 +254,28 @@ h1, h2, h3, h4 {
 .now-list { margin-top: 10px; display: flex; flex-direction: column; gap: 8px; }
 .now-list a { display: flex; justify-content: space-between; font-size: 13px; padding: 2px 0; }
 .filmstrip-wrap { position: relative; margin-top: 44px; }
+.filmstrip-wrap::before,
 .filmstrip-wrap::after {
   content: '';
   position: absolute;
-  top: 0; right: 0;
+  top: 0;
   width: 120px; height: 100%;
-  background: linear-gradient(to right, transparent, #000);
   pointer-events: none;
+  transition: opacity 0.3s;
+  z-index: 1;
 }
+.filmstrip-wrap::before {
+  left: 0;
+  background: linear-gradient(to left, transparent, #000);
+  opacity: 0;
+}
+.filmstrip-wrap::after {
+  right: 0;
+  background: linear-gradient(to right, transparent, #000);
+  opacity: 1;
+}
+.filmstrip-wrap.is-scrolled::before { opacity: 1; }
+.filmstrip-wrap.is-end::after { opacity: 0; }
 .filmstrip { display: flex; overflow-x: auto; scrollbar-width: none; height: 68vh; gap: 3px; cursor: grab; }
 .filmstrip::-webkit-scrollbar { display: none; }
 .filmstrip:active { cursor: grabbing; }

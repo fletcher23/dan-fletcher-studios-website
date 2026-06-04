@@ -156,4 +156,14 @@
       });
     });
   }
+  /* ── Filmstrip scroll fades ── */
+  var filmstrip = document.querySelector('.filmstrip');
+  var filmstripWrap = document.querySelector('.filmstrip-wrap');
+  if (filmstrip && filmstripWrap) {
+    filmstrip.addEventListener('scroll', function () {
+      var atEnd = filmstrip.scrollLeft + filmstrip.clientWidth >= filmstrip.scrollWidth - 4;
+      filmstripWrap.classList.toggle('is-scrolled', filmstrip.scrollLeft > 4);
+      filmstripWrap.classList.toggle('is-end', atEnd);
+    });
+  }
 })();
