@@ -253,6 +253,10 @@ h1, h2, h3, h4 {
 .hero-intro p { font-size: clamp(16px, 1.5vw, 19px); line-height: 1.55; color: var(--ink); max-width: 640px; }
 .now-list { margin-top: 10px; display: flex; flex-direction: column; gap: 8px; }
 .now-list a { display: flex; justify-content: space-between; font-size: 13px; padding: 2px 0; }
+.filmstrip { display: flex; overflow-x: auto; scrollbar-width: none; height: 68vh; gap: 3px; margin-top: 44px; }
+.filmstrip::-webkit-scrollbar { display: none; }
+.filmstrip__photo { flex: 0 0 auto; height: 100%; overflow: hidden; }
+.filmstrip__photo img { height: 100%; width: auto; display: block; }
 .now-list .num { color: var(--red); }
 .now-list .arr { color: var(--ink-muted); }
 
