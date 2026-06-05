@@ -253,7 +253,7 @@ h1, h2, h3, h4 {
 .hero-intro p { font-size: clamp(16px, 1.5vw, 19px); line-height: 1.55; color: var(--ink); max-width: 640px; }
 .now-list { margin-top: 10px; display: flex; flex-direction: column; gap: 8px; }
 .now-list a { display: flex; justify-content: space-between; font-size: 13px; padding: 2px 0; }
-.filmstrip-wrap { position: relative; margin-top: 12px; }
+.filmstrip-wrap { position: relative; margin-top: 28px; }
 .filmstrip-wrap::before,
 .filmstrip-wrap::after {
   content: '';
@@ -493,7 +493,7 @@ h1, h2, h3, h4 {
 /* ════════════════════════════════════════════════════════════════
    PAGE: contact
    ════════════════════════════════════════════════════════════════ */
-.contact-head { padding-block: 56px 32px; }
+.contact-head { padding-block: 40px 12px; }
 .contact-head__inner { display: grid; grid-template-columns: 1.6fr 1fr; gap: 48px; align-items: end; }
 .contact-head h1 { font-size: clamp(72px, 14vw, 200px); margin-top: 12px; line-height: 0.85; }
 .resp-card { background: var(--ink); color: #fff; padding: 28px; }
