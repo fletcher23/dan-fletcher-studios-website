@@ -247,13 +247,13 @@ h1, h2, h3, h4 {
 .hero-h1 { font-size: clamp(64px, 11vw, 148px); margin-top: 24px; line-height: 0.85; font-weight: 400; }
 .hero-h1 .display-italic { color: var(--red); font-weight: 700; }
 .hero-intro {
-  margin-top: 40px; display: grid; grid-template-columns: 1.8fr 1fr; gap: 32px;
-  padding-top: 28px; border-top: 1px solid var(--rule);
+  margin-top: 24px; display: grid; grid-template-columns: 1.8fr 1fr; gap: 32px;
+  padding-top: 20px; border-top: 1px solid var(--rule);
 }
 .hero-intro p { font-size: clamp(16px, 1.5vw, 19px); line-height: 1.55; color: var(--ink); max-width: 640px; }
 .now-list { margin-top: 10px; display: flex; flex-direction: column; gap: 8px; }
 .now-list a { display: flex; justify-content: space-between; font-size: 13px; padding: 2px 0; }
-.filmstrip-wrap { position: relative; margin-top: 44px; }
+.filmstrip-wrap { position: relative; margin-top: 12px; }
 .filmstrip-wrap::before,
 .filmstrip-wrap::after {
   content: '';
@@ -443,7 +443,7 @@ h1, h2, h3, h4 {
 /* ════════════════════════════════════════════════════════════════
    PAGE: about / studio
    ════════════════════════════════════════════════════════════════ */
-.about-head { padding-block: 56px 32px; }
+.about-head { padding-block: 40px 12px; }
 .about-head__inner { display: grid; grid-template-columns: 1.4fr 1fr; gap: 48px; align-items: end; }
 .about-head h1 { font-size: clamp(72px, 14vw, 200px); margin-top: 12px; line-height: 0.85; }
 .about-head p { font-size: clamp(16px, 1.4vw, 19px); color: var(--ink-dim); line-height: 1.6; max-width: 380px; }
