@@ -57,114 +57,16 @@
     <section class="container contact-body">
       <div class="contact-grid">
 
-        <!--
-          ┌─────────────────────────────────────────────────────────────────┐
-          │ FORM SETUP — submissions email dan@danfletcherstudios.com         │
-          │                                                                   │
-          │ 1. Sign up at formspree.io using dan@danfletcherstudios.com       │
-          │    (or add it under Form Settings → Emails → Notification email). │
-          │ 2. Create a form; copy its endpoint ID (e.g. xanbqkpz).           │
-          │ 3. Replace YOUR_FORMSPREE_ID in the action below with that ID.    │
-          │                                                                   │
-          │ Notifications go to whatever address the form is set to in the    │
-          │ Formspree dashboard — the recipient cannot be set from HTML.      │
-          │ The _cc below also copies dan@ as a backup.                       │
-          └─────────────────────────────────────────────────────────────────┘
-        -->
-        <form id="contact-form" action="https://formspree.io/f/xnjyqdkl" method="POST">
-          <span class="mono" style="color:var(--red);">/ Project brief</span>
-
-          <div class="cfield-row">
-            <div>
-              <label for="first-name">First name *</label>
-              <input class="c-input" type="text" id="first-name" name="first_name" autocomplete="given-name" required placeholder="Jane" />
-            </div>
-            <div>
-              <label for="last-name">Last name *</label>
-              <input class="c-input" type="text" id="last-name" name="last_name" autocomplete="family-name" required placeholder="Smith" />
-            </div>
-          </div>
-
-          <div class="cfield-row">
-            <div>
-              <label for="email">Email *</label>
-              <input class="c-input" type="email" id="email" name="email" autocomplete="email" required placeholder="jane@yourcompany.com" />
-            </div>
-            <div>
-              <label for="phone">Phone</label>
-              <input class="c-input" type="tel" id="phone" name="phone" autocomplete="tel" placeholder="(630) 555-0142" />
-            </div>
-          </div>
-
-          <div class="cfield">
-            <label>What type of session are you looking for? (select all that apply)</label>
-            <div class="checkbox-grid">
-              <label class="c-check"><input type="checkbox" name="session_type" value="Headshots / Portraits" /><span>Headshots / Portraits</span></label>
-              <label class="c-check"><input type="checkbox" name="session_type" value="Brand / Business Photography" /><span>Brand / Business Photography</span></label>
-              <label class="c-check"><input type="checkbox" name="session_type" value="Lifestyle Session" /><span>Lifestyle Session</span></label>
-              <label class="c-check"><input type="checkbox" name="session_type" value="Social / Brand Video Content" /><span>Social / Brand Video Content</span></label>
-              <label class="c-check"><input type="checkbox" name="session_type" value="Graphic Design" /><span>Graphic Design</span></label>
-              <label class="c-check"><input type="checkbox" name="session_type" value="Agency Retainer Packages" /><span>Agency Retainer Packages</span></label>
-            </div>
-          </div>
-
-          <div class="cfield-row">
-            <div>
-              <label for="timeline">Ideal timeline</label>
-              <div class="select-wrap">
-                <select class="c-select" id="timeline" name="timeline">
-                  <option value="" disabled selected>Choose one…</option>
-                  <option value="asap">ASAP / within 2 weeks</option>
-                  <option value="this-month">This month</option>
-                  <option value="1-2-months">Next 1–2 months</option>
-                  <option value="3-plus-months">3+ months out</option>
-                  <option value="flexible">Flexible / no rush</option>
-                </select>
-              </div>
-            </div>
-            <div>
-              <label for="location">Shoot location</label>
-              <div class="select-wrap">
-                <select class="c-select" id="location" name="location">
-                  <option value="" disabled selected>Choose one…</option>
-                  <option value="wheaton-suburbs">Wheaton &amp; Surrounding Suburbs</option>
-                  <option value="chicagoland">Greater Chicagoland</option>
-                  <option value="remote">Remote (Graphic Design Only)</option>
-                </select>
-              </div>
-            </div>
-          </div>
-
-          <div class="cfield">
-            <label for="message">Anything else you'd like to share? Any specific vision, ideas, or questions?</label>
-            <textarea class="c-textarea" id="message" name="message" rows="5" placeholder="Tell me more…"></textarea>
-          </div>
-
-          <div class="cfield">
-            <label>How did you hear about us?</label>
-            <div class="checkbox-grid">
-              <label class="c-check"><input type="radio" name="heard_about" value="Instagram" /><span>Instagram</span></label>
-              <label class="c-check"><input type="radio" name="heard_about" value="Google Search" /><span>Google Search</span></label>
-              <label class="c-check"><input type="radio" name="heard_about" value="AI (ChatGPT, Claude, Gemini)" /><span>AI (ChatGPT, Claude, Gemini)</span></label>
-              <label class="c-check"><input type="radio" name="heard_about" value="Word-of-mouth" /><span>Word-of-mouth</span></label>
-            </div>
-          </div>
-
-          <!-- Anti-spam + routing -->
-          <input type="text" name="_gotcha" style="display:none;" tabindex="-1" autocomplete="off" />
-          <input type="hidden" name="_subject" value="New inquiry from Dan Fletcher Studios" />
-          <input type="hidden" name="_cc" value="dan@danfletcherstudios.com" />
-          <input type="hidden" name="_next" value="https://danfletcherstudios.com/contact.html?sent=1" />
-
-          <div id="form-error" class="form-msg" role="alert" hidden>
-            Something went wrong. Please try again, or email dan@danfletcherstudios.com directly.
-          </div>
-
-          <div class="c-submit-row">
-            <button type="submit" class="btn primary" id="submit-btn">Send it →</button>
-            <span class="mono">No pressure, no sales pitch.</span>
-          </div>
-        </form>
+        <!-- HoneyBook contact form -->
+        <div class="hb-p-69c1e0c6e9e34f002724acd2-1"></div>
+        <img height="1" width="1" style="display:none" src="https://www.honeybook.com/p.png?pid=69c1e0c6e9e34f002724acd2" alt="" />
+        <script>
+          (function(h,b,s,n,i,p,e,t) {
+            h._HB_ = h._HB_ || {};h._HB_.pid = i;;;;
+            t=b.createElement(s);t.type="text/javascript";t.async=!0;t.src=n;
+            e=b.getElementsByTagName(s)[0];e.parentNode.insertBefore(t,e);
+          })(window,document,"script","https://widget.honeybook.com/assets_users_production/websiteplacements/placement-controller.min.js","69c1e0c6e9e34f002724acd2");
+        </script>
 
         <aside class="contact-aside">
           <div class="panel">
